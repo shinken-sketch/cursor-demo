@@ -6,7 +6,7 @@ describe('extractEmails', () => {
     it('returns emails from member objects', () => {
         const members = [
             { name: 'Alice', email: 'alice@example.com' },
-            { name: 'Bob', email: 'bob@example  example.com' },
+            { name: 'Bob', email: 'bob@example.com' },
         ];
         assert.deepEqual(extractEmails(members), ['alice@example.com', 'bob@example.com']);
     });
