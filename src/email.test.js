@@ -15,6 +15,16 @@ describe('extractEmails', () => {
         assert.deepEqual(extractEmails(null), []);
         assert.deepEqual(extractEmails('invalid'), []);
     });
+
+    it('does not throw when array contains null or undefined members', () => {
+        const members = [
+            { name: 'Alice', email: 'alice@example.com' },
+            null,
+            undefined,
+            { name: 'Bob', email: 'bob@example.com' },
+        ];
+        assert.deepEqual(extractEmails(members), ['alice@example.com', undefined, undefined, 'bob@example.com']);
+    });
 });
 
 describe('isValidEmail', () => {
@@ -41,6 +51,15 @@ describe('getValidEmails', () => {
 
     it('returns empty array for non-array input', () => {
         assert.deepEqual(getValidEmails(undefined), []);
+    });
+
+    it('skips null members without throwing', () => {
+        const members = [
+            { name: 'Alice', email: 'alice@example.com' },
+            null,
+            { name: 'Bob', email: 'not-an-email' },
+        ];
+        assert.deepEqual(getValidEmails(members), ['alice@example.com']);
     });
 });
 
