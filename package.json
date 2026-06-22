@@ -4,11 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "node --test src/**/*.test.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinken-sketch/cursor-demo.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shinken-sketch/cursor-demo/issues"
+  },
+  "homepage": "https://github.com/shinken-sketch/cursor-demo#readme"
 }
